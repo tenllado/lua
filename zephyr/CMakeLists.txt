@@ -1,0 +1,46 @@
+if(CONFIG_LUA)
+	zephyr_interface_library_named(liblua)
+
+	# should be include dir?
+	zephyr_include_directories(../)
+
+	zephyr_library()
+	zephyr_library_sources(
+		../lapi.c
+		../lauxlib.c
+		../lbaselib.c
+		../lcode.c
+		../lcorolib.c
+		../lctype.c
+		../ldblib.c
+		../ldebug.c
+		../ldo.c
+		../ldump.c
+		../lfunc.c
+		../lgc.c
+		../linit.c
+		../liolib.c
+		../llex.c
+		../lmathlib.c
+		../lmem.c
+		../loadlib.c
+		../lobject.c
+		../lopcodes.c
+		../loslib.c
+		../lparser.c
+		../lstate.c
+		../lstring.c
+		../lstrlib.c
+		../ltable.c
+		../ltablib.c
+		../ltm.c
+		../lundump.c
+		../lutf8lib.c
+		../lvm.c
+		../lzio.c
+		)
+
+	zephyr_library_link_libraries(liblua)
+
+	target_link_libraries(liblua INTERFACE zephyr_interface)
+endif()

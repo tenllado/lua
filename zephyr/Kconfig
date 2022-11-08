@@ -1,0 +1,12 @@
+config LUA
+	bool "Lua scripting language"
+	default n
+	help
+	  This option adds the lua library to the zephyr build.
+
+if LUA
+
+# posible additional options, like for instance adding a shell command for a lua
+# interpreter
+
+endif

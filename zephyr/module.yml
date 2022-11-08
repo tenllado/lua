@@ -1,0 +1,4 @@
+name: lua
+build:
+    cmake: ./zephyr
+    kconfig: ./zephyr/Kconfig
