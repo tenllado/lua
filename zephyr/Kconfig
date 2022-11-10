@@ -1,6 +1,9 @@
 config LUA
 	bool "Lua scripting language"
 	default n
+	depends on NEWLIB_LIBC
+	depends on POSIX_API
+	depends on FILE_SYSTEM
 	help
 	  This option adds the lua library to the zephyr build.
 
