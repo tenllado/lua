@@ -34,6 +34,9 @@ if(CONFIG_LUA)
 		../lutf8lib.c
 		../lvm.c
 		../lzio.c
+		# this file should eventually be removed when these stubs are
+		# implemented in the libc
+		missing_stubs.c
 		)
 
 	zephyr_library_link_libraries(zephyr)
