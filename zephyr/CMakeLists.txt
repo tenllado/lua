@@ -1,10 +1,6 @@
 if(CONFIG_LUA)
-	zephyr_interface_library_named(liblua)
-
-	# should be include dir?
+	zephyr_library_named(liblua)
 	zephyr_include_directories(../)
-
-	zephyr_library()
 	zephyr_library_sources(
 		../lapi.c
 		../lauxlib.c
@@ -40,7 +36,5 @@ if(CONFIG_LUA)
 		../lzio.c
 		)
 
-	zephyr_library_link_libraries(liblua)
-
-	target_link_libraries(liblua INTERFACE zephyr_interface)
+	zephyr_library_link_libraries(zephyr)
 endif()
