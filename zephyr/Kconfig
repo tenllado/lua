@@ -12,10 +12,10 @@ config LUA_ROOT
 	default "/lfs/"
 	depends on LUA
 	help
-		This option allows to change the default path for lua files used 
-		with require (LUA_PATH_DEFAULT)
-		Lua modules go in LUA_ROOT/share/lua/<version>/
-		C lua modules go in LUA_ROOT/lib/lua/<version>/
+		This option allows to change the root for the default path for lua files
+		used with require (LUA_PATH_DEFAULT)
+		Lua modules go in LUA_ROOT/lua/
+		C lua modules go in LUA_ROOT/lib/lua/
 
 if LUA
 
