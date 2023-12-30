@@ -1,7 +1,8 @@
 if(CONFIG_LUA)
 	zephyr_library_named(liblua)
-	zephyr_include_directories(../)
-	zephyr_library_sources(
+	zephyr_include_directories(../ .)
+
+	set(liblua_sources
 		../lapi.c
 		../lauxlib.c
 		../lbaselib.c
@@ -37,7 +38,13 @@ if(CONFIG_LUA)
 		# this file should eventually be removed when these stubs are
 		# implemented in the libc
 		missing_stubs.c
-		)
+	)
 
+	if (CONFIG_LUA_GLOCK)
+		target_compile_definitions(liblua PRIVATE LUA_USER_H="luauser.h")
+		set(liblua_sources ${liblua_sources} luauser.c)
+	endif()
+
+	zephyr_library_sources(${liblua_sources})
 	zephyr_library_link_libraries(zephyr)
 endif()
