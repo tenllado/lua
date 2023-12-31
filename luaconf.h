@@ -224,9 +224,6 @@
 
 #if !defined(LUA_PATH_DEFAULT)
 #define LUA_PATH_DEFAULT  \
-		LUA_LDIR"?.lbc;"  LUA_LDIR"?/init.lbc;" \
-		LUA_CDIR"?.lbc;"  LUA_CDIR"?/init.lbc;" \
-		"./?.lbc;" "./?/init.lbc"               \
 		LUA_LDIR"?.lua;"  LUA_LDIR"?/init.lua;" \
 		LUA_CDIR"?.lua;"  LUA_CDIR"?/init.lua;" \
 		"./?.lua;" "./?/init.lua"
