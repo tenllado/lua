@@ -1,6 +1,5 @@
 #include "lua.h"
 #include "luauser.h"
-#include <pthread.h>
 
 #define _UNUSED(...) (void)(__VA_ARGS__)
 
